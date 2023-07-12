@@ -37,7 +37,8 @@ form.addEventListener('submit', function (event) {
 
 //відкриття форми
 
-let closeButton = document.querySelector('#close');
+let closeButton = document.querySelector('.close');
+console.log('closeButton--->', closeButton);
 let sendButton = document.querySelector('#send');
 let headerBtnOpenform = document.querySelector('#btn');
 let formSend = document.querySelector('.form-send');
