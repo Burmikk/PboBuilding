@@ -3,43 +3,37 @@ let body = document.querySelector('body');
 let headerMenu = document.querySelector('.header-menu');
 let mobileMenu = document.querySelector('.menu-mobile');
 
-
 menu.addEventListener('click', event => {
   event.preventDefault();
-  menu.classList.toggle('start');// замінила active на start+ в стилях
+  menu.classList.toggle('start'); // замінила active на start+ в стилях
   headerMenu.classList.toggle('start');
   mobileMenu.classList.toggle('hidden');
   body.classList.toggle('lock');
 });
 
 //Validation input form
-let form  = document.querySelector('form');
-//console.log(form);
+let form = document.querySelector('form');
 let fields = form.querySelectorAll('.field');
-//console.log(fields);
 
 form.addEventListener('submit', function (event) {
-  event.preventDefault()
+  event.preventDefault();
 
-  var errors = form.querySelectorAll('.error')
+  var errors = form.querySelectorAll('.error');
 
   for (var i = 0; i < errors.length; i++) {
-    errors[i].remove()
+    errors[i].remove();
   }
 
   for (var i = 0; i < fields.length; i++) {
     if (!fields[i].value) {
-      console.log('field is blank', fields[i])
-      var error = document.createElement('div')
-      error.className = 'error'
-      error.style.color = 'red'
-      error.innerHTML = 'Cannot be blank'
-      form[i].parentElement.insertBefore(error, fields[i])
+      var error = document.createElement('div');
+      error.className = 'error';
+      error.style.color = 'red';
+      error.innerHTML = 'Cannot be blank';
+      form[i].parentElement.insertBefore(error, fields[i]);
     }
   }
-
-})
-
+});
 
 //відкриття форми
 
@@ -60,7 +54,7 @@ closeButton.addEventListener('click', event => {
 });
 sendButton.addEventListener('submit', event => {
   event.preventDefault();
-  
+
   formSend.classList.remove('show');
   formSend.classList.add('hide');
   sendMessage(form);
@@ -70,19 +64,19 @@ sendButton.addEventListener('submit', event => {
 
 async function sendMessage(form) {
   const formData = new formData(form);
-  if (formData){
+  if (formData) {
     const url = 'sendmessage.php';
-    const response = await fetch(url,{
-      method:"POST",
-      body:formData
+    const response = await fetch(url, {
+      method: 'POST',
+      body: formData,
     });
-    if (response.ok){
+    if (response.ok) {
       formSend.reset();
       alert('Form sent');
     } else {
-      alert ('Eror');
-    } 
-   }
+      alert('Eror');
+    }
+  }
 }
 
 /* 
@@ -104,5 +98,3 @@ function popupAnimation() {
     }
   });
 }; */
-
-

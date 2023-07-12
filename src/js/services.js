@@ -66,7 +66,6 @@ function handleModalClose() {
 }
 
 const handleClose = ({ target, currentTarget, code }) => {
-  // console.log('target, currentTarget, code', target, currentTarget, code)
   if (target === currentTarget || code === 'Escape') {
     handleModalClose();
   }

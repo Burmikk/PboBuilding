@@ -1,6 +1,5 @@
-import Swiper, {Autoplay} from 'swiper';
+import Swiper, { Autoplay } from 'swiper';
 const swiper = new Swiper('.clients-swiper', {
-
   modules: [Autoplay],
   speed: 400,
   init: true,
@@ -13,11 +12,11 @@ const swiper = new Swiper('.clients-swiper', {
   simulateTouch: true,
   touchRatio: 1,
   touchAngle: 45,
-  grabCursor:true,
+  grabCursor: true,
   freeMode: true,
 
-  mousewheel:{
-    sensitivity:1,
+  mousewheel: {
+    sensitivity: 1,
   },
 
   breakpoints: {
@@ -29,29 +28,16 @@ const swiper = new Swiper('.clients-swiper', {
     768: {
       slidesPerView: 6,
       spaceBetween: 68,
-    }},
+    },
+  },
 
-    autoplay: {
-      delay: 3000,
-      pauseOnMouseEnter: 	false,
-      disableOnInteraction: false,
-      stopOnLastSlide: false,
-    }
-
-
+  autoplay: {
+    delay: 3000,
+    pauseOnMouseEnter: false,
+    disableOnInteraction: false,
+    stopOnLastSlide: false,
+  },
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 /* function Ant(crslId) {
 
